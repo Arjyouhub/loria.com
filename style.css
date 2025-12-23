@@ -7,9 +7,11 @@
   --light-bg: #fafafa;
   --ivory: #f3f2ee;
 }
-html{
-    scroll-behavior: smooth;
+
+html {
+  scroll-behavior: smooth;
 }
+
 /* RESET */
 * {
   margin: 0;
@@ -39,6 +41,10 @@ body {
   font-weight: 600;
 }
 
+.nav {
+  display: flex;
+}
+
 .nav a {
   margin-left: 1.5rem;
   text-decoration: none;
@@ -58,14 +64,11 @@ body {
   cursor: pointer;
 }
 
-/* HERO (AUTO-IMAGE SAFE) */
+/* HERO */
 .hero {
   height: 70vh;
   background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
     url("img/pexels-bertellifotografia-17023007.jpg")
     center / cover no-repeat;
   display: flex;
@@ -74,7 +77,6 @@ body {
   padding: 2rem;
 }
 
-/* HERO CONTENT */
 .hero-box {
   text-align: center;
   max-width: 600px;
@@ -154,10 +156,17 @@ h2 {
   padding: 1.5rem;
 }
 
-.img-box {
-  height: 180px;
-  background: #ddd;
+.product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
   margin-bottom: 1rem;
+}
+
+.product-card p {
+  font-size: 0.85rem;
+  color: var(--gray);
 }
 
 /* CONTACT */
@@ -222,7 +231,8 @@ h2 {
     margin: 0;
   }
 
-  #menu-toggle:checked + .menu-icon + .nav {
+  /* SAFER MOBILE TOGGLE */
+  #menu-toggle:checked ~ .nav {
     display: flex;
   }
 
@@ -230,7 +240,12 @@ h2 {
     font-size: 2rem;
   }
 
+  .product-card img {
+    height: 160px;
+  }
+
   .contact-wrap {
     grid-template-columns: 1fr;
   }
 }
+
