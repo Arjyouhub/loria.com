@@ -1,0 +1,824 @@
+:root {
+  --gold: #8a7a2e;
+  --gold-dark: #6f6122;
+  --text: #1a1a1a;
+  --gray: #555;
+  --border: #e6e6e6;
+  --light-bg: #fafafa;
+  --ivory: #f3f2ee;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #fff;
+  color: var(--text);
+  line-height: 1.6;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.logo {
+  letter-spacing: 2px;
+  font-weight: 600;
+}
+
+.nav {
+  display: flex;
+}
+
+.nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+}
+
+/* MOBILE MENU */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  height: 70vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("../img/background.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.hero-box {
+  text-align: center;
+  max-width: 600px;
+}
+
+.hero-box h1 {
+  color: var(--ivory);
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  animation: slideUp 0.8s ease-out 0.5s forwards;
+}
+
+.hero-box p {
+  color: rgba(243, 242, 238, 0.85);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: slideUp 0.8s ease-out 0.7s forwards;
+}
+
+.hero-btn {
+  display: inline-block;
+  color: var(--ivory);
+  border: 1px solid rgba(243, 242, 238, 0.6);
+  padding: 0.8rem 1.9rem;
+  font-size: 0.85rem;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+section {
+  padding: 4rem 2rem;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.center-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
+  color: var(--gray);
+}
+
+/* GRIDS */
+.three-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.box {
+  border: 1px solid var(--border);
+  padding: 2rem;
+}
+
+/* PRODUCTS / CATALOGS */
+.products {
+  background: var(--light-bg);
+}
+
+.product-grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.product-card {
+  border: 1px solid var(--border);
+  text-align: center;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.product-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  transition: transform 0.4s ease;
+}
+
+.product-card p {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+/* HOVER & CLICK ANIMATION */
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.product-card:hover img {
+  transform: scale(1.08);
+}
+
+.product-card:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* CATEGORY HERO */
+.category-hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  /* Adjustable height */
+  background-color: #ddd;
+  /* Fallback */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* Force fit */
+  background-position: center;
+  margin-bottom: 2rem;
+}
+
+.hero-overlay {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  /* Indented from left */
+  background: #1a1a1a;
+  padding: 1.5rem;
+  max-width: 400px;
+  color: #fff;
+}
+
+.hero-overlay-inner {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem 1.5rem;
+  text-align: center;
+}
+
+.hero-overlay-inner h3 {
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  font-size: 1.4rem;
+  color: #fff;
+  opacity: 0;
+  animation: slideUp 0.8s ease-out 0.5s forwards;
+}
+
+.hero-overlay-inner p {
+  font-style: italic;
+  font-family: serif;
+  /* Elegant touch */
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0;
+  border-top: 1px solid #fff;
+  /* The underline effect */
+  display: inline-block;
+  padding-top: 0.3rem;
+  opacity: 0;
+  animation: slideUp 0.8s ease-out 0.7s forwards;
+}
+
+/* VISION */
+.vision {
+  background: #fff;
+}
+
+.vision-wrap {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  /* Centered text for elegance */
+}
+
+.vision-text h2 {
+  text-align: center;
+  /* Ensure header is centered */
+  letter-spacing: 2px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: var(--gray);
+}
+
+.vision-text p {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.vision-box {
+  background: var(--ivory);
+  padding: 1rem;
+  border: 1px solid #dcdcdc;
+  text-align: center;
+  /* Ensure it has some height if empty, but flexible */
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  /* Added space at top as requested */
+}
+
+.vision-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Placeholder style if needed */
+.vision-placeholder {
+  color: #aaa;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* CONTACT */
+.contact {
+  background: var(--light-bg);
+}
+
+.contact-wrap {
+  max-width: 1000px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  resize: none;
+}
+
+.contact-form button {
+  background: var(--gold-dark);
+  color: var(--ivory);
+  border: none;
+  padding: 0.8rem;
+  cursor: pointer;
+}
+
+/* FOOTER */
+/* FOOTER */
+.footer {
+  background-color: #1a1a1a;
+  /* Dark Premium Background */
+  color: #a8a8a8;
+  /* Muted text for elegance */
+  padding: 4rem 2rem;
+  /* Spacious padding */
+  font-size: 0.9rem;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.footer-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  /* Balanced 3-column layout */
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* ... existing styles ... */
+/* Social Icons & Contact */
+.footer-contact {
+  margin-top: 1rem;
+}
+
+.footer-contact p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.footer-contact a:hover {
+  opacity: 0.8;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.social-icons svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  transition: transform 0.2s;
+}
+
+.social-icons a:hover svg {
+  transform: scale(1.1);
+}
+
+.footer-col h3 {
+  color: #fff;
+  /* White title for logo */
+}
+
+.footer-col h4 {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: #fff;
+  /* White headings */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.8rem;
+  display: block;
+  /* Full width border */
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-col a {
+  text-decoration: none;
+  color: #a8a8a8;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.footer-col a::before {
+  content: "";
+  /* Remove old arrow, keeping it clean */
+}
+
+.footer-col a:hover {
+  color: var(--gold);
+  padding-left: 5px;
+  /* Subtle movement */
+}
+
+.footer-contact p {
+  margin-bottom: 0.8rem;
+}
+
+.footer-contact a {
+  color: #a8a8a8;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer-contact a:hover {
+  color: var(--gold);
+}
+
+.social-icons a {
+  font-size: 1.2rem;
+  margin-right: 15px;
+  color: #a8a8a8;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.social-icons a::before {
+  content: none;
+}
+
+/* Footer Responsive */
+@media (max-width: 900px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    display: none;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav a {
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    display: none;
+    flex-direction: column;
+    border-top: 1px solid var(--border);
+  }
+
+  .nav a {
+    padding: 1rem;
+    border-bottom: 1px solid var(--border);
+    margin: 0;
+  }
+
+  #menu-toggle:checked~.nav {
+    display: flex;
+  }
+
+  .hero-box h1 {
+    font-size: 2rem;
+  }
+
+  /* Force grid to 1 column on mobile if needed, or 2 */
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: auto;
+    /* Let height adapt */
+    max-height: 250px;
+  }
+
+  .contact-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* NEW CATALOGUES STYLES */
+.catalogues-header {
+  text-align: left;
+  max-width: 1100px;
+  margin: auto;
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.catalogues-header h2 {
+  text-align: center;
+  /* Center align for a classic look */
+  font-weight: 300;
+  letter-spacing: 4px;
+  /* Wider spacing */
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.division-title {
+  text-align: center;
+  font-family: serif;
+  /* Differentiate with serif font */
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-dark);
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+/* Optional decoration for the subtitle */
+.division-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background: var(--gold);
+  margin: 1rem auto 0;
+}
+
+/* Updated Product Card for Grid Look */
+.product-card {
+  border: none;
+  /* No border around the whole thing */
+  padding: 0;
+  /* Flush */
+  text-align: center;
+  position: relative;
+  background: transparent;
+  box-shadow: none;
+  /* Remove default shadow */
+}
+
+.product-card:hover {
+  transform: none;
+  /* Disable lift on hover for this style */
+  box-shadow: none;
+}
+
+.product-card-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  /* Square-ish */
+  overflow: hidden;
+  border: 1px solid #333;
+  /* Dark border around image */
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+  /* Subtle zoom */
+}
+
+.product-label {
+  background: #3c3c3c;
+  /* Dark bar */
+  color: #fff;
+  padding: 0.6rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-top: 0;
+  /* Flush with image if inside? No, design shows it at bottom */
+  width: 100%;
+}
+
+/* Footer Copyright Section */
+/* Footer Copyright Section */
+.footer-copyright {
+  text-align: center;
+  padding-top: 2rem;
+  color: #666;
+  font-size: 0.75rem;
+  background-color: transparent;
+  /* Seamless with footer */
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  /* Very subtle divider */
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+/* About / Company Overview Redesign */
+.about {
+  padding: 4rem 2rem;
+  background-color: var(--light-bg);
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 1rem;
+}
+
+.section-intro {
+  color: var(--gray);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Ensure 3 columns on larger screens */
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.about-card {
+  background: #fff;
+  padding: 2.5rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
+  text-align: left;
+  transition: transform 0.3s ease;
+  height: 100%;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-card p {
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.about-card strong {
+  color: var(--gold-dark);
+}
+
+/* Category Hero Backgrounds */
+.hero-trolleys {
+  background-image: url('../img/banners/trolleys.png');
+}
+
+.hero-flatware {
+  background-image: url('../img/banners/flatware.png');
+}
+
+.hero-coffee {
+  background-image: url('../img/banners/coffee.png');
+}
+
+.hero-menu {
+  background-image: url('../img/banners/menu.png');
+}
+
+.hero-collections {
+  background-image: url('../img/banners/collections.png');
+}
+
+.hero-chafing {
+  background-image: url('../img/banners/chafing.png');
+}
+
+.hero-breakfast {
+  background-image: url('../img/banners/breakfast.png');
+}
+
+.hero-bar {
+  background-image: url('../img/banners/bar.png');
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* SCROLL ANIMATIONS */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utility Classes for Inline Style Removal */
+.about-intro-text {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.padding-top-0 {
+  padding-top: 0 !important;
+}
+
+.product-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.catalogs-bg {
+  background-color: #f4f4f4;
+}
