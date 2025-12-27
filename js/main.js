@@ -1,13 +1,40 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // 1. Contact Form Redirection
+    // 1. Contact Form Redirection (AJAX Method for Local/Static Support)
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
-            setTimeout(function () {
-                window.location.href = 'pages/thank-you.html';
-            }, 1500);
+            e.preventDefault(); // Prevent standard HTML submit
+
+            const formData = new FormData(contactForm);
+
+            // Show some loading state if desired (optional)
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            fetch("https://formsubmit.co/ajax/arjunkty93@gmail.com", {
+                method: "POST",
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Success - Redirect locally
+                    if (window.location.pathname.includes('/pages/')) {
+                        window.location.href = 'thank-you.html';
+                    } else {
+                        window.location.href = 'pages/thank-you.html';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert("Something went wrong. Please try again or email directly.");
+                    submitBtn.innerText = originalText;
+                    submitBtn.disabled = false;
+                });
         });
     }
+
 
     // 2. Scroll Animations (Intersection Observer)
     const observerOptions = {

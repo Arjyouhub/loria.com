@@ -139,11 +139,13 @@
             Get in touch for inquiries, customization, or showroom visits.
         </p>
         <div class="contact-wrap">
-            <form class="contact-form" action="" method="POST" enctype="text/plain">
-                <input type="text" placeholder="Your Name" required>
-                <input type="email" placeholder="Your Email" required>
-                <input type="text" placeholder="Your Phone Number">
-                <textarea rows="5" placeholder="Your Message" required></textarea>
+            <form class="contact-form" action="https://formsubmit.co/arjunkty93@gmail.com" method="POST">
+                <input type="hidden" name="_next" value="thank-you.html">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="phone" placeholder="Your Phone Number">
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
             <div class="contact-info">

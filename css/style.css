@@ -852,7 +852,9 @@ h2 {
   width: 100%;
   height: 500px;
   /* Fixed height for consistency */
-  object-fit: cover;
+  object-fit: contain;
+  background-color: #fff;
+  /* seamless background for contained images */
   border-radius: 4px;
 }
 
