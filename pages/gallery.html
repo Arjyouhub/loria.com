@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery - Loria Trading</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- HEADER (Adapted for subpage) -->
+    <header class="header">
+        <div class="logo">
+            <img src="../img/logo/logo.png" alt="Loria Trading">
+        </div>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <nav class="nav">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#catalogs">Catalogs</a>
+            <a href="../index.html#services">Services</a>
+            <a href="gallery.html" class="active">Gallery</a>
+            <a href="../index.html#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="gallery-section">
+        <h2>Our Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-slider">
+                <!-- Slide 1 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/coffee-and-tea.jpg" alt="Coffee and Tea Collection">
+
+                </div>
+                <!-- Slide 2 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/flatware.jpg" alt="Flatware Collection">
+
+                </div>
+                <!-- Slide 3 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/breakfast.jpg" alt="Breakfast Collection">
+
+                </div>
+                <!-- Slide 4 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/chafing-dishes.jpg" alt="Chafing Dishes">
+
+                </div>
+                <!-- Slide 5 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/trolleys-real.jpg" alt="Trolleys">
+
+                </div>
+                <!-- Slide 6 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/bar-and-champagne.jpg" alt="Bar & Champagne">
+
+                </div>
+                <!-- Slide 7 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/menu-and-banquet.jpg" alt="Menu & Banquet">
+
+                </div>
+                <!-- Slide 8 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/collections.jpg" alt="Collections">
+
+                </div>
+                <!-- Slide 9 -->
+                <!-- Slide 9 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/gallery/gallery-buffet.jpg" alt="Luxury Buffet Setup">
+                </div>
+                <!-- Slide 10 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/gallery/gallery-cutlery.jpg" alt="Premium Cutlery">
+                </div>
+                <!-- Slide 11 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/gallery/gallery-user-1.jpg" alt="Gallery Image 11">
+                </div>
+                <!-- Slide 12 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/gallery/gallery-user-2.jpg" alt="Gallery Image 12">
+                </div>
+                <!-- Slide 13 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/gallery/gallery-user-3.jpg" alt="Gallery Image 13">
+                </div>
+                <!-- Slide 14 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/gallery/gallery-user-4.jpg" alt="Gallery Image 14">
+                </div>
+                <!-- Slide 15 -->
+                <div class="gallery-slide fade">
+                    <img src="../img/gallery/gallery-user-5.jpg" alt="Gallery Image 15">
+                </div>
+            </div>
+
+            <!-- Controls -->
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+
+            <!-- Dots/Circles -->
+            <div class="dots-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+                <span class="dot" onclick="currentSlide(7)"></span>
+                <span class="dot" onclick="currentSlide(8)"></span>
+                <span class="dot" onclick="currentSlide(9)"></span>
+                <span class="dot" onclick="currentSlide(10)"></span>
+                <span class="dot" onclick="currentSlide(11)"></span>
+                <span class="dot" onclick="currentSlide(12)"></span>
+                <span class="dot" onclick="currentSlide(13)"></span>
+                <span class="dot" onclick="currentSlide(14)"></span>
+                <span class="dot" onclick="currentSlide(15)"></span>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <p class="center-text">
+            Get in touch for inquiries, customization, or showroom visits.
+        </p>
+        <div class="contact-wrap">
+            <form class="contact-form" action="" method="POST" enctype="text/plain">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Your Phone Number">
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p><strong>Showroom</strong><br>Wafi City – Khan Mourjan, Dubai</p>
+                <p><strong>Email</strong><br>info@loriatrading.com</p>
+                <p><strong>Phone</strong><br>
+                    <a href="tel:+971555387039"
+                        style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-solid fa-phone"></i>
+                        +971 55 538 7039
+                    </a>
+                </p>
+                <p>
+                    <a href="https://wa.me/971555387039"
+                        style="text-decoration: none; color: inherit; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        WhatsApp
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3
+                    style="font-weight: 400; letter-spacing: 2px; margin-bottom: 0.5rem; font-size: 1.5rem; color:#fff;">
+                    LORIA</h3>
+                <p style="font-size: 0.85rem; line-height: 1.6; color: #e0e0e0; margin-bottom: 0;">
+                    Loria Trading of Hotel Supplies LLC has been established in Dubai since 2004.
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#about">About</a></li>
+                    <li><a href="../index.html#services">Services</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Our Collections</h4>
+                <ul>
+                    <li><a href="flatware.html">Flatware</a></li>
+                    <li><a href="coffee-and-tea.html">Coffee & Tea</a></li>
+                    <li><a href="breakfast.html">Breakfast</a></li>
+                    <li><a href="menu-and-banquet.html">Menu & Banquet</a></li>
+                    <li><a href="chafing-dishes.html">Chafing Dishes</a></li>
+                    <li><a href="bar-and-champagne.html">Bar & Champagne</a></li>
+                    <li><a href="trolleys.html">Trolleys</a></li>
+                    <li><a href="collections.html">Collections</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact">
+                    <p>
+                        <a href="tel:+971555387039">
+                            <i class="fa-solid fa-phone"></i>
+                            +971 55 538 7039
+                        </a>
+                    </p>
+                    <p>
+                        <a href="https://wa.me/971555387039">
+                            <i class="fa-brands fa-whatsapp"></i>
+                            WhatsApp
+                        </a>
+                    </p>
+                    <p style="margin-top: 10px;">
+                        <a href="mailto:info@loriatrading.com">
+                            info@loriatrading.com
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            &copy; 2024 Loria Trading. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

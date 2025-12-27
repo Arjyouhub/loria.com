@@ -31,4 +31,73 @@ document.addEventListener('DOMContentLoaded', function () {
         el.classList.add('animate-on-scroll');
         observer.observe(el);
     });
+
+
+    // Fallback: Ensure elements are visible if observer fails or on quick scroll
+    setTimeout(() => {
+        animatedElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight) {
+                el.classList.add('is-visible');
+            }
+        });
+    }, 500);
+
+    // 3. Gallery Slideshow Logic
+    let slideIndex = 1;
+    let slideInterval;
+
+    // Initialize gallery if it exists on the page
+    if (document.querySelector('.gallery-slider')) {
+        showSlides(slideIndex);
+        startAutoSlide();
+    }
+
+    // Next/previous controls
+    window.changeSlide = function (n) {
+        showSlides(slideIndex += n);
+        resetAutoSlide();
+    }
+
+    // Thumbnail image controls
+    window.currentSlide = function (n) {
+        showSlides(slideIndex = n);
+        resetAutoSlide();
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("gallery-slide");
+        let dots = document.getElementsByClassName("dot");
+
+        if (!slides.length) return;
+
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        if (slides[slideIndex - 1]) {
+            slides[slideIndex - 1].style.display = "block";
+        }
+        if (dots[slideIndex - 1]) {
+            dots[slideIndex - 1].className += " active";
+        }
+    }
+
+    function startAutoSlide() {
+        slideInterval = setInterval(function () {
+            showSlides(slideIndex += 1);
+        }, 4000); // Change image every 4 seconds
+    }
+
+    function resetAutoSlide() {
+        clearInterval(slideInterval);
+        startAutoSlide();
+    }
 });
