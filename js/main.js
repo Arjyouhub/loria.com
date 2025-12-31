@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             submitBtn.innerText = 'Sending...';
             submitBtn.disabled = true;
 
-            fetch("https://formsubmit.co/ajax/arjunkty93@gmail.com", {
+            fetch("https://formsubmit.co/ajax/Info@loriauae.com", {
                 method: "POST",
                 body: formData
             })
